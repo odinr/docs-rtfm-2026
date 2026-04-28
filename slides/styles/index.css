@@ -1,0 +1,9 @@
+/* Left-align all code blocks (overrides layout: fact / center centering) */
+.slidev-layout pre,
+.slidev-layout .slidev-code,
+.slidev-layout .slidev-code-wrapper,
+.slidev-layout div[class*='language-'] {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  text-align: left !important;
+}

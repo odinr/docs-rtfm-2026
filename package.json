@@ -1,0 +1,14 @@
+{
+  "name": "docs-rtfm-2026",
+  "devDependencies": {
+    "@slidev/cli": "^0.49.29",
+    "@slidev/theme-default": "^0.25.0"
+  },
+  "packageManager": "bun@1.1.29",
+  "private": true,
+  "scripts": {
+    "dev": "bunx slidev slides/slides.md",
+    "build": "bunx slidev build slides/first-page.md",
+    "export": "bunx slidev export slides/first-page.md"
+  }
+}
