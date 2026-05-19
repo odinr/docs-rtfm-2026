@@ -26,23 +26,66 @@ Adaptive
 </h1>
 
 <!--
-Oh great! 
-Yet another 3 letter abrivation....
-But we are only going to focus on the word; Intent.
-Ever pounded on why developers still are around?
-Why do we need developers when the internet holds all the knowledge in the world?
-Why do we need developers when agents can generate code out the wazoo?
+Oh great.
+Another three-letter abbreviation.
 
-First we need to clarify some definitions.
+But this one is really just an excuse to talk about one word: intent.
+
+Have you ever wondered why developers are still around?
+Why do we need developers when the internet already contains more code than any of us can read?
+Why do we need developers when agents can generate code faster than we can review it?
+
+My answer is: because code was never the hard part on its own.
+The hard part is knowing what the code is supposed to mean.
 -->
 
 ---
 layout: statement
 ---
 
-# Develop
+# AI generates <Keyword>code</Keyword>
+## But is it the __right__ code?
 
-## Creating __solutions__ by applying __knowledge__
+<!--
+Welcome to AI Caffeine — behind the hype.
+Everyone is talking about AI writing code.
+Copilot, Cursor, Devin, agents, workflows, all of it.
+
+And yes, AI can generate code fast.
+
+But fast is not the same as right.
+Without context it can generate the wrong code instantly.
+
+The bottleneck was never typing speed.
+The bottleneck was always knowing what to build, why it matters, and how we know when it is correct.
+-->
+
+---
+layout: fact
+---
+
+## The missing piece is <Keyword>intent</Keyword>
+
+<!--
+This is the gap most teams feel.
+
+We expect the tool to understand our architecture, our conventions, our trade-offs, our history.
+But most of that understanding is not written down anywhere the tool can use.
+
+So the output looks plausible, but it misses the point.
+
+The missing piece is intent:
+the reason behind the solution,
+and the criteria we use to judge whether the solution is right.
+-->
+
+---
+layout: statement
+---
+
+# Development
+
+## __Applied knowledge__ turned into a solution
 
 <Quote author="dictionary.com">
 Bring out the capabilities or possibilities<br/>
@@ -50,8 +93,11 @@ to a more advanced or effective state.
 </Quote>
 
 <!--
-A developers job is to create solutions by applying knowledge.
-Solutions are created by knowing how to to apply that knowledge
+A developer's job is not just to know things.
+The job is to apply knowledge under constraints.
+
+The same fact can be useless in one context and critical in another.
+Development is the act of knowing which knowledge matters here.
 -->
 
 ---
@@ -60,7 +106,7 @@ layout: statement
 
 # Intent
 
-## __Goal__ of applying knowledge
+## The __goal__ that gives <Keyword>knowledge</Keyword> direction
 
 <Quote author="dictionary.com">
 Something that someone is <b>intending</b> or meaning<br/>
@@ -71,11 +117,11 @@ to achieve purpose or objective.
 layout: fact
 ---
 
-Knowing that 25 laps indoor is 5km run is useful....
+Knowing that 25 indoor laps is 5 km is useful.
 
 <div v-click>
 
-but applying <Keyword><b>knowledge</b></Keyword> to solve a problem is <b><u>priceless</u></b>
+but knowing <Keyword><b>when</b></Keyword> that fact solves the problem is <b><u>development</u></b>
 
 ```ts {2,14}
 /**
@@ -104,7 +150,7 @@ layout: statement
 ---
 
 # If the <Keyword>intent</Keyword> is clear<br/> 
-## wrong implementation is a temporary problem.
+## wrong implementation is a temporary problem
 ---
 
 # <Keyword><b>Intent</b></Keyword> <u>persists</u>
@@ -218,8 +264,19 @@ function product(...args: number[]): number {
 layout: statement
 ---
 
-# The collective <Keyword>intent</Keyword> 
-## is the culture of __solution__
+# Shared <Keyword>intent</Keyword>
+## becomes engineering __culture__
+
+<!--
+When intent is only in one person's head, it is a bottleneck.
+When intent is shared, it becomes culture.
+
+Culture is not the poster on the wall.
+It is the repeated understanding of how we solve problems here.
+
+That is why intent has to become visible.
+If people and agents are going to act on it, they need something to read, test, and correct.
+-->
 
 ---
 layout: full
@@ -235,11 +292,116 @@ layout: full
     height: 100%;
   }
 </style>
+
+<!--
+This is what that looks like in practice.
+We are not asking the agent to magically know our world.
+We are feeding it intent, checking what it does with that intent, and tightening the loop.
+-->
+
+---
+layout: statement
+---
+
+# Specify
+
+## <Keyword><b>What</b></Keyword> and <Keyword><b>why</b></Keyword>
+
+<!--
+The first step is specify.
+Not "write me some code".
+Specify what should exist, why it should exist, and what would make the result acceptable.
+
+This is where we move from wishful prompting to useful intent.
+-->
+
+---
+layout: statement
+---
+
+# Plan
+
+## Steps of <Keyword><b>how</b></Keyword>
+
+<!--
+Then we plan.
+The plan is not sacred.
+It is a bridge between intent and implementation.
+
+It should expose assumptions early, while they are still cheap to change.
+-->
+
+---
+layout: statement
+---
+
+# Implement
+
+## Execution grounded in <Keyword><b>intent</b></Keyword>
+
+<!--
+Then we implement.
+This is where AI is powerful.
+But the implementation is no longer floating freely.
+It is grounded in the intent we already made explicit.
+-->
+
+---
+layout: statement
+---
+
+# Evaluate
+
+## Does the <b>output</b> match the <Keyword><b>intent</b></Keyword>?
+<br/>
+<v-click>
+```mermaid
+graph LR
+    A[🎯Specify] --> B[📄Plan]
+    B --> C[🏗️Implement]
+    C --> D[🧐Evaluate]
+    D --> A
+    style A fill:#5d8392,color:#fff
+    style D fill:#5d8392,color:#fff
+```
+</v-click>
+
+<!--
+Evaluation closes the loop.
+You're not asking "does the code look right" — you're asking "does it match the intent we wrote down".
+If it doesn't, either fix the code — or update the intent if the intent was wrong.
+Either way, the artifacts get sharper. The next cycle starts with better intent.
+-->
+
+---
+
+# Where does <Keyword>intent</Keyword> live?
+
+<div v-clicks>
+
+- In the rules we repeat
+- In the docs we maintain
+- In the decisions we preserve
+
+</div>
+
+<!--
+So if intent matters, where does it actually live?
+
+Not in one magical document.
+Not in a template nobody reads.
+
+It lives in the artifacts we already touch:
+the rules we repeat,
+the docs we maintain,
+and the decisions we preserve.
+-->
+
 ---
 
 # Conventions
 
-Rules for the <Keyword>intended</Keyword> way of implementing
+How we want work to be <Keyword>shaped</Keyword>
 
 ```md
 ## Functional style
@@ -258,39 +420,17 @@ Every exported function, type, and module has accurate `@param`, `@returns`, and
 Use short internal comments for maintainers that explain *why*, not what the code literally does.
 ```
 
----
-
-# Contribute
-
-Guide for <Keyword>intended</Keyword> contributions
-
-```md
-## How we intend you to make a PR
-
-### 1. Open an issue first
-For non-trivial changes — align on scope and approach before coding.
-
-### 2. Branch from main
-One logical change per PR; keep it reviewable.
-
-### 3. Follow project style
-Match existing patterns, formatting, and structure.
-
-### 4. Describe intent
-Clear title and description: what changed and why.
-
-### 5. Respond to review
-Address feedback or discuss; don't leave threads hanging.
-
-### 6. Squash when we ask
-Keep history clean; we'll say when to squash.
-```
+<!--
+Conventions are intent about style and maintainability.
+They tell both developers and agents what "good" looks like in this codebase.
+Without this, every generated solution brings its own little worldview with it.
+-->
 
 ---
 
 # Documentation
 
-Description of the <Keyword>intended</Keyword> solution
+What the system is <Keyword>meant</Keyword> to be
 
 ```md
 # my-app
@@ -311,32 +451,19 @@ my-app/
 └── package.json
 ```
 
----
+<!--
+Documentation is intent about the system.
+It says what this thing is meant to be, how it is organized, and how someone should approach it.
 
-# Changeset
-
-Clear <Keyword>intentions</Keyword> of changes
-
-Changeset
-```md
----
-my-app: patch
----
-
-Fixed redirect loop when session expires on protected routes.
-```
-
-Changelog
-```md
-## 1.2.0 (2026-01-15)
-- **fix:** #666 - Fixed redirect loop when session expires on protected routes.
-```
+Good documentation is not a museum of old facts.
+It is operational context for future work.
+-->
 
 ---
 
 # Architecture Decision Records
 
-Record of <Keyword>intended</Keyword> decisions
+Why we chose this <Keyword>path</Keyword>
 
 ```md
 # 001: Use React for the frontend
@@ -355,105 +482,116 @@ We will use React with TypeScript.
 - Need to manage state (e.g. Zustand)
 ```
 
----
+<!--
+ADRs are intent about decisions.
+They preserve the part that disappears fastest from code: why we chose this path, and what trade-offs came with it.
 
-# Artifacts
-
-Documentation of the lifecycle — not just issues on a board.
-
-<VClick>
-
-## Feature
-__Why__ is a solution needed and __what__ is the <Keyword>intended</Keyword> value
-
-</VClick>
-<VClick>
-
-## Use Case
-__Who__ are the <Keyword>intended</Keyword> actors
-
-</VClick>
-<VClick>
-
-## Task
-__How__ to execute <Keyword>intended</Keyword> work
-
-</VClick>
+That is exactly the kind of context an agent cannot infer reliably from the implementation alone.
+-->
 
 ---
-
-# Instructions
-
-Rules the agent follows on (almost) every request — *how* to write and which conventions to apply.
-
-```md
-When writing or editing TypeScript in this repo:
-
-## Conventions
-Read and apply the conventions in `./contribute/typescript.md` before suggesting or generating code.
-
-## Match existing code
-Same style and patterns as the file you're editing.
-
-## Don't violate conventions
-Don't suggest code that breaks the conventions (e.g. no mutable in-place updates if immutability is required).
-
-## TSDoc
-Add TSDoc for any new exported function or type; include `@param`, `@returns`, and `@example` where useful.
-
-## Intent comments
-Prefer short comments that explain *why*, not what the code does.
-```
-
+layout: statement
 ---
 
-# Skills
+## Does this matter in the <Keyword>real</Keyword> world?
 
-Documented procedures that tell an agent *when* to run and *what* to do.
-
-```md
----
-name: create-pr
-description: Use when the user asks to create or open a pull request.
----
-
-1. Validate state
-   - Check we're on a branch.
-   - Check all changes are staged.
-   - Ask the user if unstaged changes should be included.
-2. Commit
-   - Diff changes to `main`.
-   - Generate a proper commit message.
-3. Quality
-   - Follow project style.
-   - Run linter and tests.
-4. Draft PR
-   - Use the PR template `.github/PULL_REQUEST_TEMPLATE.md`.
-   - Generate a proposed markdown PR description.
-5. Create PR
-   - Use `gh pr create --base main --fill` (or `--title` / `--body-file` for template).
-```
+<!--
+You might be thinking — nice theory, but does this play out in practice?
+Let me show you some stories that prove intent is the real asset, not code.
+-->
 
 ---
+layout: statement
+---
 
-# Agent
+# Clean Room
 
-An AI that acts on your behalf — uses instructions (how to behave) and skills.
+<Quote author="Phoenix Technologies, 1984" size="sm">
+First, a team studied the IBM BIOS and described everything it did
+without using or referencing any actual code.
+Then a second team wrote a new BIOS that operated as specified.
+</Quote>
 
-```md
-You are an agent that helps generate TypeScript code in this repository.
-You adhere to the project's contribute docs (conventions, style, PR flow).
-You help create PRs by following the create-pr skill when the user asks.
+<Quote author="Cloudflare 2026" size="sm">
+One engineer and an AI model rebuilt the most popular front-end
+framework <b>Next</b> from scratch. The whole thing cost about $1,100 in tokens.
+</Quote>
 
-## Tone
-- Be concise and direct.
-- Use clear, professional language.
-- Explain *why* when suggesting changes, not just *what*.
+<!--
+This is not a story about copying IBM.
+And it is not really a story about cloning Next.
+It is a story about where the value moved.
 
-## Instructions
-- Read and apply `.github/copilot-instructions.md` on every request.
-- For TypeScript, follow conventions in `./contribute/typescript.md`.
+When the intended behaviour was clear enough,
+the implementation became replaceable.
 
-## Scope
-- Stay in this repo; only touch files outside the workspace if the user explicitly asks.
-```
+That is the uncomfortable part.
+And also the useful part.
+-->
+
+---
+layout: statement
+---
+
+# Implementation is becoming <Keyword>cheap</Keyword>
+## Misunderstanding is still __expensive__
+
+<!--
+That is the phase-out I would leave you with.
+
+AI makes implementation cheaper.
+It does not make misunderstanding cheaper.
+In fact, it can make misunderstanding scale faster.
+
+So the important question is not:
+can we generate code?
+
+The important question is:
+can we express the intent clearly enough that generated code can be evaluated?
+-->
+
+---
+layout: statement
+---
+
+# Our job is not to protect <Keyword>code</Keyword>
+## It is to protect __understanding__
+
+<!--
+That is why developers are still around.
+
+Not because we are the only ones who can type syntax.
+Not because the code we write today is sacred.
+
+We are here to understand the problem,
+name the constraints,
+make trade-offs explicit,
+and leave behind enough intent that the next person,
+or the next agent,
+can move without guessing.
+-->
+
+---
+layout: statement
+---
+
+# Make the <Keyword>intent</Keyword> clear
+## Then let the implementation evolve
+
+<!--
+So round it off like this:
+
+If the intent is missing, AI gives us speed in the wrong direction.
+If the intent is clear, AI gives us leverage.
+
+That is Adaptive Intent Driven Development.
+Specify what matters.
+Plan against it.
+Implement with help.
+Evaluate without mercy.
+
+Because implementation evolves.
+Intent is what lets us know whether it evolved in the right direction.
+
+Thank you.
+-->
