@@ -7,3 +7,11 @@
   margin-right: auto !important;
   text-align: left !important;
 }
+
+.slidev-presenter .slidev-note :where(strong, b) {
+  color: var(--slidev-theme-primary, #5d8392);
+}
+
+.slidev-presenter .slidev-note blockquote {
+  border-left: .5rem solid var(--slidev-theme-primary, #5d8392);
+}
